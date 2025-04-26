@@ -6,21 +6,26 @@
     <title>Rent Storage</title>
     <link rel="stylesheet" href="index.css" />
   </head>
+
   <body>
     <nav>
-      <div class="nav-content">
-        <img
-          src="/public/assets/logo.png"
-          alt="Rent Storage Logo"
-          class="logo"
-        />
-        <h1>Rent Storage</h1>
-      </div>
-      <div class="nav-links">
-        <a href="#benefits">Vantagens</a>
-        <a href="#gallery">Galeria</a>
-        <a href="#testimonials">Testemunhos</a>
-        <a href="#contact">Contacto</a>
+      <div class="nav-container">
+        <div class="logo">
+          <img src="/public/assets/logo.png" alt="Rent Storage Logo" />
+          <span>Rent Storage</span>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="nav-links" id="nav-links">
+          <a href="#benefits">Vantagens</a>
+          <a href="#testimonials">Testemunhos</a>
+          <a href="#contact">Contacto</a>
+        </div>
       </div>
     </nav>
 
@@ -92,5 +97,15 @@
       <p>Contacta-nos para mais informações: rentstorage@example.com</p>
       <p>Amora e Arrentela · Acesso 24h · Desde 50€/mês</p>
     </footer>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>
