@@ -1,21 +1,18 @@
-/* rgb(38, 38, 38) rgb(214, 186, 0)*/
-
 :root {
-  --primary-color: rgb(251, 205, 65); /* Yellow */
-  --secondary-color: rgb(38, 38, 38); /* Dark Grey */
-  --accent-color: rgb(249, 228, 94); /* Light Yellow */
+  --primary-color: rgb(251, 205, 65);
+  --secondary-color: rgb(38, 38, 38);
+  --accent-color: rgb(249, 228, 94);
 
-  --background-color: #f9fafb; /* Light Gray Background */
+  --background-color: #f9fafb;
   --white-color: rgb(240, 240, 240);
 
-  --card-hover-color: rgba(0, 0, 0, 0.1); /* Shadow Color */
-  --footer-bg-color: rgb(38, 38, 38); /* Dark Footer */
-  --text-color: rgb(38, 38, 38); /* Default Text Color */
-  --link-hover-color: #ffab00; /* Hover Color for Links */
-  --testimonial-bg-color: #fff; /* Testimonial Background */
+  --card-hover-color: rgba(0, 0, 0, 0.1);
+  --footer-bg-color: rgb(38, 38, 38);
+  --text-color: rgb(38, 38, 38);
+  --link-hover-color: #ffab00;
+  --testimonial-bg-color: #fff;
 }
 
-/* RESET geral */
 * {
   margin: 0;
   padding: 0;
@@ -50,7 +47,6 @@ nav {
   align-items: center;
 }
 
-/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -68,7 +64,6 @@ nav {
   font-weight: bold;
 }
 
-/* Nav links */
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -81,7 +76,6 @@ nav {
   font-size: 1rem;
 }
 
-/* Mobile styles */
 @media (max-width: 768px) {
   .nav-links {
     position: absolute;
@@ -146,17 +140,17 @@ nav {
 
 .hero {
   position: relative;
+  height: 100vh; /* Full viewport height */
   background-image: url("/public/assets/image-1.jpeg");
   background-size: cover;
   background-position: center;
-  height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white;
   text-align: center;
-  color: var(--text-color);
-  padding: 0 1rem;
+  overflow: hidden;
+  background-attachment: fixed;
 }
 
 .hero h1 {
@@ -168,6 +162,85 @@ nav {
   font-size: 1.5rem;
 }
 
+/* Overlay to ensure text visibility */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
+}
+
+/* Hero content positioning */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px; /* Limit content width */
+  padding: 20px;
+}
+
+/* Heading */
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+/* Paragraph */
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  animation: fadeInUp 2s ease-out;
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: #fbc800; /* Your primary color */
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+  animation: fadeInUp 2.5s ease-out;
+}
+
+.cta-button:hover {
+  background-color: #e0a500; /* Darker shade on hover */
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+  }
+}
 /* ------------ Benefits ------------ */
 
 .info-section {
