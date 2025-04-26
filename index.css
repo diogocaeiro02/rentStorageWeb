@@ -90,13 +90,13 @@ nav {
     opacity: 0;
     transform: translateY(-20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none; /* <- important to prevent clicking when hidden */
+    pointer-events: none;
   }
 
   .nav-links.active {
     opacity: 1;
     transform: translateY(0);
-    pointer-events: auto; /* <- allow clicking when visible */
+    pointer-events: auto;
   }
 
   .hamburger {
@@ -121,7 +121,6 @@ nav {
       bottom 0.4s ease;
   }
 
-  /* Morph into X */
   .hamburger.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 10px);
   }
@@ -140,7 +139,7 @@ nav {
 
 .hero {
   position: relative;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   background-image: url("/public/assets/image-1.jpeg");
   background-size: cover;
   background-position: center;
@@ -162,7 +161,6 @@ nav {
   font-size: 1.5rem;
 }
 
-/* Overlay to ensure text visibility */
 .hero::before {
   content: "";
   position: absolute;
@@ -170,19 +168,17 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
-/* Hero content positioning */
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 800px; /* Limit content width */
+  max-width: 800px;
   padding: 20px;
 }
 
-/* Heading */
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 20px;
@@ -190,18 +186,16 @@ nav {
   animation: fadeInUp 1.5s ease-out;
 }
 
-/* Paragraph */
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 30px;
   animation: fadeInUp 2s ease-out;
 }
 
-/* CTA Button */
 .cta-button {
   display: inline-block;
   padding: 10px 30px;
-  background-color: #fbc800; /* Your primary color */
+  background-color: #fbc800;
   color: black;
   font-size: 1.2rem;
   font-weight: bold;
@@ -212,10 +206,9 @@ nav {
 }
 
 .cta-button:hover {
-  background-color: #e0a500; /* Darker shade on hover */
+  background-color: #e0a500;
 }
 
-/* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -227,7 +220,6 @@ nav {
   }
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2rem;
@@ -244,53 +236,67 @@ nav {
 /* ------------ Benefits ------------ */
 
 .info-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+  background-color: #f7f7f7;
   padding: 4rem 2rem;
-  background: var(--background-color);
+  text-align: center;
+  color: #333;
 }
 
-.info-box.benefits {
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.benefit-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.benefit-card {
   background-color: #fff;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  width: 260px;
+  width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
 }
 
-.info-box.benefits:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-}
-
-.info-box.benefits h2 {
-  font-size: 1.25rem;
-  color: var(--text-color);
+.benefit-card .icon {
+  font-size: 3rem;
   margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+  color: var(--primary-color);
 }
 
-.info-box.benefits .icon {
+.benefit-card h3 {
   font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
 }
 
-.info-box.benefits ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.info-box.benefits li {
+.benefit-card p {
   font-size: 1rem;
-  color: var(--text-color);
+  color: #555;
   line-height: 1.5;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .benefit-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
 }
 
 /* ------------ Galeria ------------ */
