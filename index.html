@@ -127,15 +127,45 @@
         <div class="swiper-wrapper">
           <div class="testimonial-card swiper-slide">
             <p>"Serviço excelente e espaço impecável!"</p>
-            <h4>- João Silva</h4>
+            <h4>- Mariana Faustino</h4>
           </div>
           <div class="testimonial-card swiper-slide">
             <p>"Atendimento rápido e muito simpáticos."</p>
-            <h4>- Maria Fernandes</h4>
+            <h4>- Rodrigo Monteiro</h4>
           </div>
           <div class="testimonial-card swiper-slide">
             <p>"Ótimo local para guardar os meus pertences com segurança."</p>
-            <h4>- Pedro Costa</h4>
+            <h4>- Joao Portela</h4>
+          </div>
+          <div class="testimonial-card swiper-slide">
+            <p>"Excelente atendimento e muito boa localização. Recomendo!"</p>
+            <h4>- Ana Sousa</h4>
+          </div>
+          <div class="testimonial-card swiper-slide">
+            <p>
+              "Fiquei muito satisfeito com o serviço. Espaços limpos e seguros."
+            </p>
+            <h4>- Carlos Pereira</h4>
+          </div>
+          <div class="testimonial-card swiper-slide">
+            <p>
+              "Serviço rápido e confiável. Ideal para quem precisa de
+              armazenamento temporário."
+            </p>
+            <h4>- Marta Lima</h4>
+          </div>
+          <div class="testimonial-card swiper-slide">
+            <p>
+              "Adorei a experiência. O espaço é perfeito e a segurança é top!"
+            </p>
+            <h4>- Rui Alves</h4>
+          </div>
+          <div class="testimonial-card swiper-slide">
+            <p>
+              "Muito satisfeita com o serviço, recomendo a todos que precisam de
+              um lugar seguro para guardar os seus bens."
+            </p>
+            <h4>- Sofia Martins</h4>
           </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -225,75 +255,6 @@
     </footer>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <script>
-      const hamburger = document.getElementById("hamburger");
-      const navLinks = document.getElementById("nav-links");
-
-      hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
-        navLinks.classList.toggle("active");
-      });
-
-      const images = document.querySelectorAll(".image-grid img");
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-      const closeBtn = document.querySelector(".close");
-      const prevBtn = document.querySelector(".prev");
-      const nextBtn = document.querySelector(".next");
-
-      let currentIndex = 0;
-
-      images.forEach((img, index) => {
-        img.addEventListener("click", () => {
-          lightbox.classList.add("active");
-          lightboxImg.src = img.src;
-          currentIndex = index;
-        });
-      });
-
-      closeBtn.addEventListener("click", () => {
-        lightbox.classList.remove("active");
-      });
-
-      prevBtn.addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        lightboxImg.src = images[currentIndex].src;
-      });
-
-      nextBtn.addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        lightboxImg.src = images[currentIndex].src;
-      });
-
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) {
-          lightbox.classList.remove("active");
-        }
-      });
-
-      const swiper = new Swiper(".swiper-container", {
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        grabCursor: true,
-        slidesPerView: 1,
-        spaceBetween: 20,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
-        },
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
