@@ -399,7 +399,7 @@ nav {
 
 .testimonials {
   padding: 4rem 1rem;
-  background-color: #f9f9f9;
+  background-color: var(--primary-color);
   text-align: center;
 }
 
@@ -478,7 +478,6 @@ nav {
   background: #333;
 }
 
-/* Responsive tweaks */
 @media (min-width: 768px) {
   .testimonial-card {
     width: 600px;
@@ -491,49 +490,189 @@ nav {
   }
 }
 
-footer {
-  background-color: var(--footer-bg-color);
-  color: var(--white-color);
+/* ------------ Contact ------------*/
+
+.contact-details {
+  padding: 60px 20px;
+  background-color: #f8f8f8;
   text-align: center;
-  padding: 30px 20px;
+  margin-top: 40px;
 }
 
-footer p {
-  margin: 5px 0;
+.contact-details h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
 }
 
-/* Scroll Bar */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-/* Styling the scrollbar */
+.contact-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  text-align: left;
+  overflow: hidden;
+  word-wrap: break-word;
+  position: relative;
+}
+
+.contact-item i {
+  font-size: 2rem;
+  color: var(--link-hover-color);
+  margin-right: 15px;
+}
+
+.contact-text {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-text span {
+  display: block;
+  margin-bottom: 8px;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.contact-item:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+.contact-item i:hover {
+  color: #3b7d9f;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-item {
+    max-width: 90%;
+    padding: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .contact-item {
+    padding: 25px;
+    height: 130px;
+  }
+
+  .contact-text {
+    font-size: 1.2rem;
+  }
+}
+
+/* ------------ Footer ------------*/
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.footer-logo span {
+  font-size: 1.2rem;
+}
+
+.footer-info {
+  text-align: left;
+}
+
+.footer-social a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #f4f4f4;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-info {
+    margin: 10px 0;
+  }
+}
+
+/* ------------ Scroll Bar ------------*/
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 10px;
 }
 
-/* Styling the scrollbar track */
 ::-webkit-scrollbar-track {
   background-color: rgb(244, 244, 244);
   border-radius: 10px;
 }
 
-/* Styling the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
   background-color: #888;
   border-radius: 10px;
   transition: background-color 0.3s ease;
 }
 
-/* Hover effect for the scrollbar thumb */
 ::-webkit-scrollbar-thumb:hover {
   background-color: #555;
 }
 
-/* For horizontal scrollbar */
 ::-webkit-scrollbar-horizontal {
   height: 10px;
 }
 
-/* For vertical scrollbar */
 ::-webkit-scrollbar-vertical {
   width: 10px;
 }
