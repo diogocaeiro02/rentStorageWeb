@@ -170,15 +170,6 @@ nav {
   z-index: 0;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.5rem;
-}
-
 .hero::before {
   content: "";
   position: absolute;
@@ -251,6 +242,7 @@ nav {
     padding: 10px 20px;
   }
 }
+
 /* ------------ Benefits ------------ */
 
 .info-section {
