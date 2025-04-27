@@ -395,42 +395,40 @@ nav {
   color: var(--primary-color);
 }
 
-/* ------------ Seção dos testemunhos ------------ */
+/* ------------ Testimonials ------------ */
+
 .testimonials {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   padding: 4rem 1rem;
-  background-color: var(--background-color);
-  border-top: 2px solid var(--accent-color);
+  background-color: #f9f9f9;
   text-align: center;
 }
 
 .testimonials h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
+  color: #333;
+}
+
+.swiper-container {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.swiper-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  color: var(--text-color);
-}
-.testimonial-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
 }
 
 .testimonial-card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  padding: 1.5rem;
-  width: 280px;
-  box-shadow: 0 4px 10px var(--shadow);
-  text-align: center;
+  background: linear-gradient(135deg, #ffffff, #f7f7f7);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 700px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
   transition: transform 0.3s ease;
 }
 
@@ -438,15 +436,59 @@ nav {
   transform: translateY(-5px);
 }
 
-.testimonial-card p {
-  font-style: italic;
-  margin-bottom: 0.5rem;
-  color: var(--text-color);
+.testimonial-card::before {
+  content: "“";
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 5rem;
+  color: #ececec;
+  z-index: 0;
 }
 
-.testimonial-card span {
-  font-weight: bold;
-  color: var(--accent-color);
+.testimonial-card p {
+  font-size: 1.25rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  z-index: 1;
+  position: relative;
+}
+
+.testimonial-card h4 {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+  z-index: 1;
+  position: relative;
+}
+
+.swiper-pagination {
+  margin-top: 1.5rem;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #ccc;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #333;
+}
+
+/* Responsive tweaks */
+@media (min-width: 768px) {
+  .testimonial-card {
+    width: 600px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonial-card {
+    width: 700px;
+  }
 }
 
 footer {
@@ -459,3 +501,5 @@ footer {
 footer p {
   margin: 5px 0;
 }
+
+/* Scroll Bar */

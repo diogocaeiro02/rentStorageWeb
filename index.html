@@ -9,6 +9,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
   </head>
 
   <body>
@@ -99,21 +103,25 @@
       </div>
     </section>
 
-    <section class="info-section testimonials" id="testimonials">
-      <h2><span class="icon">💬</span> Testemunhos</h2>
-      <div class="testimonial-wrapper">
-        <div class="testimonial-card">
-          <p>"Serviço impecável. Rápido e seguro!"</p>
-          <span>– Joana F.</span>
+    <section class="testimonials" id="testimonials">
+      <h2>O que dizem os nossos clientes</h2>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="testimonial-card swiper-slide">
+            <p>"Serviço excelente e espaço impecável!"</p>
+            <h4>- João Silva</h4>
+          </div>
+          <div class="testimonial-card swiper-slide">
+            <p>"Atendimento rápido e muito simpáticos."</p>
+            <h4>- Maria Fernandes</h4>
+          </div>
+          <div class="testimonial-card swiper-slide">
+            <p>"Ótimo local para guardar os meus pertences com segurança."</p>
+            <h4>- Pedro Costa</h4>
+          </div>
         </div>
-        <div class="testimonial-card">
-          <p>"Ideal para guardar tudo durante a mudança."</p>
-          <span>– Rui M.</span>
-        </div>
-        <div class="testimonial-card">
-          <p>"Atendimento excelente e espaço limpo."</p>
-          <span>– Carla S.</span>
-        </div>
+        <!-- Pagination Dots -->
+        <div class="swiper-pagination"></div>
       </div>
     </section>
 
@@ -121,6 +129,8 @@
       <p>Contacta-nos para mais informações: rentstorage@example.com</p>
       <p>Amora e Arrentela · Acesso 24h · Desde 50€/mês</p>
     </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script>
       const hamburger = document.getElementById("hamburger");
@@ -162,11 +172,33 @@
         lightboxImg.src = images[currentIndex].src;
       });
 
-      // Optional: Close lightbox clicking outside image
       lightbox.addEventListener("click", (e) => {
         if (e.target === lightbox) {
           lightbox.classList.remove("active");
         }
+      });
+
+      const swiper = new Swiper(".swiper-container", {
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        grabCursor: true,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2, // 2 slides on tablets
+          },
+          1024: {
+            slidesPerView: 3, // 3 slides on desktops
+          },
+        },
       });
     </script>
   </body>
