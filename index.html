@@ -83,6 +83,20 @@
         <img src="/public/assets/image-3.jpeg" alt="Storage view 3" />
         <img src="/public/assets/image-4.jpeg" alt="Storage view 4" />
       </div>
+
+      <div class="lightbox" id="lightbox">
+        <span class="close">&times;</span>
+        <img
+          class="lightbox-img"
+          id="lightbox-img"
+          src=""
+          alt="Expanded View"
+        />
+        <div class="lightbox-controls">
+          <span class="prev">&#10094;</span>
+          <span class="next">&#10095;</span>
+        </div>
+      </div>
     </section>
 
     <section class="info-section testimonials" id="testimonials">
@@ -115,6 +129,44 @@
       hamburger.addEventListener("click", () => {
         hamburger.classList.toggle("active");
         navLinks.classList.toggle("active");
+      });
+
+      const images = document.querySelectorAll(".image-grid img");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const closeBtn = document.querySelector(".close");
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
+
+      let currentIndex = 0;
+
+      images.forEach((img, index) => {
+        img.addEventListener("click", () => {
+          lightbox.classList.add("active");
+          lightboxImg.src = img.src;
+          currentIndex = index;
+        });
+      });
+
+      closeBtn.addEventListener("click", () => {
+        lightbox.classList.remove("active");
+      });
+
+      prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        lightboxImg.src = images[currentIndex].src;
+      });
+
+      nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        lightboxImg.src = images[currentIndex].src;
+      });
+
+      // Optional: Close lightbox clicking outside image
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.remove("active");
+        }
       });
     </script>
   </body>
