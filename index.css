@@ -271,7 +271,7 @@ nav {
 
 .info-section {
   background-color: #f7f7f7;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   text-align: center;
   color: #333;
 }
@@ -337,7 +337,7 @@ nav {
 
 .gallery {
   text-align: center;
-  padding: 40px 20px;
+  padding: 100px 80px;
   background-color: var(--white-color);
 }
 
@@ -432,7 +432,7 @@ nav {
 /* ------------ Testimonials ------------ */
 
 .testimonials {
-  padding: 4rem 1rem;
+  padding: 6rem 1rem;
   background-color: var(--primary-color);
   text-align: center;
 }
@@ -528,7 +528,7 @@ nav {
 /* ------------ Contact ------------*/
 
 .contact-details {
-  padding: 60px 20px;
+  padding: 100px 80px;
   background-color: #f8f8f8;
   text-align: center;
   margin-top: 40px;
