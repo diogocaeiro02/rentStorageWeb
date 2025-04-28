@@ -36,38 +36,42 @@ body {
 
 nav {
   position: fixed;
-  top: 10px;
+  top: 12px;
   left: 50%;
   transform: translateX(-50%);
-  width: 95%;
+  width: 94%;
   z-index: 1000;
 }
 
 .nav-container {
   background-color: var(--primary-color);
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  padding: 1rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 0.8rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.75rem;
 }
 
 .logo img {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
 }
 
 .logo span {
   color: var(--text-color);
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .nav-links {
@@ -80,6 +84,28 @@ nav {
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--text-color);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: rgb(234, 234, 234);
 }
 
 @media (max-width: 768px) {
@@ -87,16 +113,17 @@ nav {
     position: absolute;
     top: 90px;
     right: 0;
-    background-color: rgb(251, 204, 65);
+    background-color: var(--primary-color);
     flex-direction: column;
     align-items: flex-start;
-    padding: 1rem;
-    border-radius: 20px;
-    width: 200px;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    width: 220px;
     opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
     pointer-events: none;
+    box-shadow: -8px 8px 20px rgba(0, 0, 0, 0.1);
   }
 
   .nav-links.active {
@@ -106,25 +133,22 @@ nav {
   }
 
   .hamburger {
-    width: 30px;
+    width: 32px;
     height: 24px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
     cursor: pointer;
-    z-index: 9999;
+    z-index: 10000;
     position: relative;
   }
 
   .hamburger span {
-    display: block;
     height: 3px;
     width: 100%;
     background-color: var(--text-color);
-    border-radius: 15px;
-    transition: transform 0.4s ease, opacity 0.4s ease, top 0.4s ease,
-      bottom 0.4s ease;
+    border-radius: 12px;
+    transition: all 0.4s ease;
   }
 
   .hamburger.active span:nth-child(1) {

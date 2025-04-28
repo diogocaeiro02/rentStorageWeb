@@ -6,6 +6,15 @@ hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
 
+const navLinkElements = document.querySelectorAll(".nav-links a");
+
+navLinkElements.forEach((link) => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navLinks.classList.remove("active");
+  });
+});
+
 const images = document.querySelectorAll(".image-grid img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
