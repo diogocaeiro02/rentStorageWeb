@@ -1,6 +1,6 @@
 # Rent Storage Website
 
-[![Website](https://img.shields.io/website?url=https%3A%2F%2F%rentstorage.pt)](https://rentstorage.pt)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Frentstorage.pt)](https://rentstorage.pt)
 [![GitHub last commit](https://img.shields.io/github/last-commit/diogocaeiro02/rentstorageweb)](https://github.com/diogocaeiro02/rentstorageweb)
 [![GitHub repo size](https://img.shields.io/github/repo-size/diogocaeiro02/rentstorageweb)](https://github.com/diogocaeiro02/rentstorageweb)
 
