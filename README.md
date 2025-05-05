@@ -42,15 +42,16 @@ This project is a static website built using:
 
 ```
 /public
-  /assets
-    - image-1.jpeg      (Hero background image)
-    - other images...   (Gallery images)
-  favicon.ico           (Tab icon)
-
-index.html
-style.css
-script.js
-README.md
+    │
+    ├── assets/
+    │      ├── image-1.jpeg      (Hero background image)
+    │      ├── other images...   (Gallery images)
+    │      └── favicon.ico           (Tab icon)
+    │
+    ├── index.html
+    ├── style.css
+    ├── script.js
+    └── README.md
 ```
 
 ---
