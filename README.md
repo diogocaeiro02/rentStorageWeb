@@ -1,8 +1,8 @@
 # Rent Storage Website
 
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fdiogocaeiro.pt)](https://diogocaeiro.pt)
-[![GitHub last commit](https://img.shields.io/github/last-commit/diogocaeiro02/diogocaeiro02.github.io)](https://github.com/diogocaeiro02/diogocaeiro02.github.io)
-[![GitHub repo size](https://img.shields.io/github/repo-size/diogocaeiro02/diogocaeiro02.github.io)](https://github.com/diogocaeiro02/diogocaeiro02.github.io)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2F%rentstorage.pt)](https://rentstorage.pt)
+[![GitHub last commit](https://img.shields.io/github/last-commit/diogocaeiro02/rentstorageweb)](https://github.com/diogocaeiro02/rentstorageweb)
+[![GitHub repo size](https://img.shields.io/github/repo-size/diogocaeiro02/rentstorageweb)](https://github.com/diogocaeiro02/rentstorageweb)
 
 > A simple, responsive landing page for **Rent Storage** — offering safe, secure storage units with 24-hour access in **Amora** and **Seixal**.
 
